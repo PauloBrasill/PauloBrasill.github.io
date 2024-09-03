@@ -141,6 +141,10 @@
             color: white;
             margin-left: 10px; /* Espaço entre o texto e a imagem */
         }
+
+        .image-list-item a {
+            text-decoration: none; /* Remove o sublinhado azul */
+        }
     </style>
 </head>
 <body>
@@ -247,26 +251,26 @@
                 });
                 setTimeout(() => imageList.style.display = 'none', 500); // Tempo de animação
             } else {
-                imageList.style.display = 'flex';
+                imageList.style display = 'flex';
                 setTimeout(() => {
                     imageList.classList.add('show');
                     const items = imageList.querySelectorAll('.image-list-item');
-                    // Inverte a ordem para que o primeiro item apareça primeiro
                     items.forEach((item, index) => {
-                        setTimeout(() => {item.classList.add('visible');
-                        }, (items.length - index - 1) * 200); // Intervalo de 200ms entre cada item
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 100); // Atraso para cada item aparecer em sequência
                     });
-                }, 10); // Tempo para garantir que a mudança de estilo seja aplicada
+                }, 10); // Pequeno atraso para garantir a transição
             }
         });
 
         enterButton.addEventListener('click', () => {
-            document.body.style.opacity = '0';
+            initialContent.style.opacity = 0;
             setTimeout(() => {
                 initialContent.style.display = 'none';
                 mainContent.style.display = 'block';
-                document.body.style.opacity = '1';
-            }, 1000); // Tempo de transição
+                mainContent.style.opacity = 1;
+            }, 1000); // Tempo de transição de 1 segundo
         });
     </script>
 </body>
