@@ -191,10 +191,10 @@
     <!-- Imagem "Sobre-mim.png" e lista de imagens -->
     <img src="imagens/Sobre-mim.png" alt="Sobre mim" class="about-image" id="about-image">
     <div class="image-list" id="image-list">
-        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank"><img src="imagens/Discord.png" alt="Discord"></a>
-        <a href="https://on.soundcloud.com/ZPo2w" target="_blank"><img src="imagens/SoundCloud.png" alt="SoundCloud"></a>
-        <a href="https://youtube.com/@bassdark" target="_blank"><img src="imagens/YouTube.png" alt="YouTube"></a>
         <a href="https://pt.namemc.com/profile/BxssDxrk.2" target="_blank"><img src="imagens/NameMC.png" alt="NameMC"></a>
+        <a href="https://youtube.com/@bassdark" target="_blank"><img src="imagens/YouTube.png" alt="YouTube"></a>
+        <a href="https://on.soundcloud.com/ZPo2w" target="_blank"><img src="imagens/SoundCloud.png" alt="SoundCloud"></a>
+        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank"><img src="imagens/Discord.png" alt="Discord"></a>
     </div>
 
     <script>
@@ -217,10 +217,11 @@
                 setTimeout(() => {
                     imageList.classList.add('show');
                     const images = imageList.querySelectorAll('img');
+                    // Inverte a ordem para que "NameMC.png" apareça primeiro
                     images.forEach((img, index) => {
                         setTimeout(() => {
                             img.classList.add('visible');
-                        }, index * 200); // Intervalo de 200ms entre cada imagem
+                        }, (images.length - index - 1) * 200); // Intervalo de 200ms entre cada imagem
                     });
                 }, 10); // Tempo para garantir que a mudança de estilo seja aplicada
             }
@@ -236,4 +237,4 @@
         });
     </script>
 </body>
-    </html>
+</html>
