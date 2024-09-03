@@ -88,12 +88,13 @@
             display: block;
         }
 
+        /* Estilos para a imagem "Sobre-mim.png" e lista de imagens */
         .about-image {
             position: fixed;
             bottom: 25px;
             left: 25px;
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
             cursor: pointer;
             z-index: 1000;
         }
@@ -115,8 +116,8 @@
         }
 
         .image-list img {
-            width: 100px; /* Tamanho ajustado para 100px */
-            height: 100px; /* Tamanho ajustado para 100px */
+            width: 50px; /* Tamanho ajustado para 50px */
+            height: 50px; /* Tamanho ajustado para 50px */
             margin-bottom: 10px;
             cursor: pointer;
             opacity: 0;
@@ -207,7 +208,7 @@
             if (imageList.classList.contains('show')) {
                 imageList.classList.remove('show');
                 const images = imageList.querySelectorAll('img');
-                images.forEach((img) => {
+                images.forEach((img, index) => {
                     img.classList.remove('visible');
                 });
                 setTimeout(() => imageList.style.display = 'none', 500); // Tempo de animação
@@ -220,7 +221,7 @@
                     images.forEach((img, index) => {
                         setTimeout(() => {
                             img.classList.add('visible');
-                        }, index * 200); // Intervalo de 200ms entre cada imagem
+                        }, (images.length - index - 1) * 200); // Intervalo de 200ms entre cada imagem
                     });
                 }, 10); // Tempo para garantir que a mudança de estilo seja aplicada
             }
