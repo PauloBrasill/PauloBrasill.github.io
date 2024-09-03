@@ -3,28 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Você não deveria estar aqui...</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .initial-screen, .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .button {
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #333;
+        }
+        .menu-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .menu-button img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
 </head>
 <body>
-    <div id="welcome-screen">
-        <h1>Você não deveria estar aqui...</h1>
-        <button id="enter-button">fds man, vou entrar</button>
+    <div id="initial-screen" class="initial-screen">
+        <div>
+            <h1>Você não deveria estar aqui...</h1>
+            <button class="button" onclick="showContent()">fds man, vou entrar</button>
+        </div>
     </div>
-    <div id="main-content" class="hidden">
-        <header>
-            <button id="menu-button">...</button>
-            <h1>Bem-vindo à minha página</h1>
-        </header>
-        <main>
-            <p>Aqui está um texto interessante sobre algo.</p>
-            <button id="btn1">Botão 1</button>
-            <button id="btn2">Botão 2</button>
-        </main>
-        <footer>
-            <p>&copy; 2024 Minha Página</p>
-        </footer>
+    <div id="content" class="hidden content">
+        <button class="menu-button">
+            <img src="caminho-para-imagem.png" alt="Menu">
+        </button>
+        <!-- Conteúdo do site aqui -->
     </div>
-    <script src="scripts.js"></script>
+    <script>
+        function showContent() {
+            document.getElementById('initial-screen').style.display = 'none';
+            document.getElementById('content').style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
