@@ -87,6 +87,36 @@
         .clickable:hover + .image-hover {
             display: block;
         }
+
+        /* Estilos para a imagem "Sobre-mim.png" e lista de imagens */
+        .about-image {
+            position: fixed; /* Posiciona a imagem fixamente na tela */
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 1000; /* Garante que a imagem esteja acima de outros elementos */
+        }
+
+        .image-list {
+            position: fixed;
+            bottom: 60px; /* Espaçamento abaixo da imagem "Sobre-mim.png" */
+            left: 0;
+            display: none; /* Oculta a lista de imagens inicialmente */
+            flex-direction: column;
+        }
+
+        .image-list img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .image-list img:hover {
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
@@ -148,10 +178,27 @@
         </div>
     </div>
 
+    <!-- Imagem "Sobre-mim.png" e lista de imagens -->
+    <img src="imagens/Sobre-mim.png" alt="Sobre mim" class="about-image" id="about-image">
+    <div class="image-list" id="image-list">
+        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank"><img src="imagens/Discord.png" alt="Discord"></a>
+        <a href="https://on.soundcloud.com/ZPo2w" target="_blank"><img src="imagens/SoundCloud.png" alt="SoundCloud"></a>
+        <a href="https://youtube.com/@bassdark" target="_blank"><img src="imagens/YouTube.png" alt="YouTube"></a>
+        <a href="https://pt.namemc.com/profile/BxssDxrk.2" target="_blank"><img src="imagens/NameMC.png" alt="NameMC"></a>
+    </div>
+
     <script>
         const enterButton = document.getElementById('enter-button');
         const initialContent = document.getElementById('initial-content');
         const mainContent = document.getElementById('main-content');
+
+        // Script para exibir/esconder a lista de imagens ao clicar na imagem "Sobre-mim.png"
+        const aboutImage = document.getElementById('about-image');
+        const imageList = document.getElementById('image-list');
+
+        aboutImage.addEventListener('click', () => {
+            imageList.style.display = imageList.style.display === 'none' ? 'flex' : 'none';
+        });
 
         enterButton.addEventListener('click', () => {
             document.body.style.opacity = '0';
