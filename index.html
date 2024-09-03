@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Você não deveria estar aqui...</title>
+    <title>Página Inicial</title>
     <style>
         body {
             margin: 0;
@@ -16,23 +16,14 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
-        .hidden {
-            display: none;
-        }
-        .initial-screen, .content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
+        .container {
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2rem;
         }
         .button {
             background-color: black;
@@ -43,44 +34,24 @@
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            margin: 20px 0;
+            margin-top: 20px;
             cursor: pointer;
             border-radius: 5px;
         }
         .button:hover {
             background-color: #333;
         }
-        .menu-button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-        .menu-button img {
-            width: 24px;
-            height: 24px;
-        }
     </style>
 </head>
 <body>
-    <div id="initial-screen" class="initial-screen">
-        <div>
-            <h1>Você não deveria estar aqui...</h1>
-            <button class="button" onclick="showContent()">fds man, vou entrar</button>
-        </div>
-    </div>
-    <div id="content" class="hidden content">
-        <button class="menu-button">
-            <img src="caminho-para-imagem.png" alt="Menu">
-        </button>
-        <!-- Conteúdo do site aqui -->
+    <div class="container">
+        <h1>Sei lá porra</h1>
+        <button class="button" onclick="handleClick()">fodase, vou entrar</button>
     </div>
     <script>
-        function showContent() {
-            document.getElementById('initial-screen').style.display = 'none';
-            document.getElementById('content').style.display = 'flex';
+        function handleClick() {
+            // Coloque aqui a ação desejada ao clicar no botão
+            alert('Você clicou no botão!');
         }
     </script>
 </body>
