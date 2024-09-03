@@ -20,9 +20,3 @@ function fadeTransition() {
         }, 10); // Small delay to trigger the transition
     }, 1000); // Match this duration to the fade-out transition time
 }
-
-// Initial fade-in effect for the first screen
-window.onload = () => {
-    const initialScreen = document.getElementById('initial-screen');
-    initialScreen.style.opacity = 1;
-};
