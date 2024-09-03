@@ -250,18 +250,21 @@
             if (imageList.classList.contains('show')) {
                 imageList.classList.remove('show');
                 const items = imageList.querySelectorAll('.image-list-item');
-                items.forEach((item, index) => {
+                items.forEach((item) => {
                     item.classList.remove('visible');
                 });
                 setTimeout(() => imageList.style.display = 'none', 500);
             } else {
                 imageList.style.display = 'flex';
-                setTimeout(() => {imageList.classList.add('show');
-                    const items = imageList.querySelectorAll('.image-list-item');
+                const items = Array.from(imageList.querySelectorAll('.image-list-item')).reverse();
+                setTimeout(() => {
+                    imageList.classList.add('show');
                     items.forEach((item, index) => {
-                        setTimeout(() => item.classList.add('visible'), index * 100);
+                setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 200); // Atraso para cada item aparecer em sequência
                     });
-                }, 10);
+                }, 50);
             }
         });
 
@@ -270,10 +273,8 @@
             setTimeout(() => {
                 initialContent.style.display = 'none';
                 mainContent.style.display = 'block';
-                setTimeout(() => {
-                    mainContent.style.opacity = '1';
-                }, 10);
-            }, 1000);
+                document.body.style.opacity = '1';
+            }, 1000); // Tempo para o fade out da página inicial e fade in do conteúdo principal
         });
     </script>
 </body>
