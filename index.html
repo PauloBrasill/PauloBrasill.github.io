@@ -93,8 +93,8 @@
             position: fixed; /* Posiciona a imagem fixamente na tela */
             bottom: 25px; /* Move a imagem 25 pixels para cima */
             left: 25px; /* Move a imagem 25 pixels para a direita */
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 100px;
             cursor: pointer;
             z-index: 1000; /* Garante que a imagem esteja acima de outros elementos */
         }
@@ -122,7 +122,8 @@
 <body>
     <div id="initial-content">
         <img src="imagens/BxssDxrk.png" alt="BxssDxrk" class="header-image">
-        <h1>Você não deveria estar aqui... Vá embora!</h1>
+        <h1>Você não deveria estar aqui...
+            Vá embora!</h1>
         <button id="enter-button">fds n te perguntei nd (Entrar mesmo assim)</button>
     </div>
 
@@ -197,7 +198,7 @@
         const imageList = document.getElementById('image-list');
 
         aboutImage.addEventListener('click', () => {
-            imageList.style.display = imageList.style.display === 'none' ? 'flex' : 'none';
+            imageList.style.display = imageList.style.display === 'flex' ? 'none' : 'flex';
         });
 
         enterButton.addEventListener('click', () => {
