@@ -76,6 +76,7 @@
             color: lightblue;
             cursor: pointer;
             margin: 5px 0;
+            text-decoration: none; /* Remove o sublinhado */
         }
 
         .image-hover {
@@ -118,17 +119,33 @@
             transform: translateY(0);
         }
 
-        .image-list img {
+        .image-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .image-item img {
             width: 50px;
             height: 50px;
-            margin-bottom: 10px;
+            margin-right: 10px;
             cursor: pointer;
             opacity: 0;
             transition: opacity 0.5s ease-out;
         }
 
-        .image-list img.visible {
+        .image-item img.visible {
             opacity: 1;
+        }
+
+        .image-item a {
+            color: white;
+            text-decoration: none; /* Remove o sublinhado */
+            margin-left: 10px;
+        }
+
+        .image-item a:hover {
+            text-decoration: underline; /* Opcional: sublinhar ao passar o mouse */
         }
     </style>
 </head>
@@ -194,10 +211,30 @@
     <!-- Imagem "Sobre-mim.png" e lista de imagens -->
     <img src="imagens/Sobre-mim.png" alt="Sobre mim" class="about-image" id="about-image">
     <div class="image-list" id="image-list">
-        <a href="https://pt.namemc.com/profile/BxssDxrk.2" target="_blank"><img src="imagens/NameMC.png" alt="NameMC"></a>
-        <a href="https://youtube.com/@bassdark" target="_blank"><img src="imagens/YouTube.png" alt="YouTube"></a>
-        <a href="https://on.soundcloud.com/ZPo2w" target="_blank"><img src="imagens/SoundCloud.png" alt="SoundCloud"></a>
-        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank"><img src="imagens/Discord.png" alt="Discord"></a>
+        <div class="image-item">
+            <a href="https://pt.namemc.com/profile/BxssDxrk.2" target="_blank">
+                <img src="imagens/NameMC.png" alt="NameMC">
+                <span>NameMC</span>
+            </a>
+        </div>
+        <div class="image-item">
+            <a href="https://youtube.com/@bassdark" target="_blank">
+                <img src="imagens/YouTube.png" alt="YouTube">
+                <span>YouTube</span>
+            </a>
+        </div>
+        <div class="image-item">
+            <a href="https://on.soundcloud.com/ZPo2w" target="_blank">
+                <img src="imagens/SoundCloud.png" alt="SoundCloud">
+                <span>SoundCloud</span>
+            </a>
+        </div>
+        <div class="image-item">
+            <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">
+                <img src="imagens/Discord.png" alt="Discord">
+                <span>Discord</span>
+            </a>
+        </div>
     </div>
 
     <script>
