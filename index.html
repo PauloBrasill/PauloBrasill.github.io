@@ -12,7 +12,6 @@
             background-color: black;
             color: white;
             font-family: Arial, sans-serif;
-            transition: opacity 1s ease-in-out;
         }
 
         #main-content {
@@ -76,8 +75,8 @@
             cursor: pointer;
             margin: 5px 0;
             text-decoration: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-out;
+            position: relative;
+            z-index: 1;
         }
 
         .clickable:hover + .image-hover {
@@ -89,6 +88,9 @@
             max-width: 300px;
             margin-top: 10px;
             display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
         }
 
         .about-image {
@@ -108,14 +110,6 @@
             left: 25px;
             display: flex;
             flex-direction: column;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        .image-list.show {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .image-item {
@@ -128,13 +122,6 @@
             width: 50px;
             height: 50px;
             margin-right: 10px;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.5s ease-out;
-        }
-
-        .image-item img.visible {
-            opacity: 1;
         }
 
         .image-item a {
@@ -143,12 +130,6 @@
             margin-left: 10px;
             position: relative;
             top: -25px;
-            opacity: 0;
-            transition: opacity 0.5s ease-out;
-        }
-
-        .image-item a.visible {
-            opacity: 1;
         }
     </style>
 </head>
@@ -250,33 +231,21 @@
         aboutImage.addEventListener('click', () => {
             if (imageList.classList.contains('show')) {
                 imageList.classList.remove('show');
-                const items = imageList.querySelectorAll('img, a');
-                items.forEach(item => item.classList.remove('visible'));
-                setTimeout(() => imageList.style.display = 'none', 500);
+                imageList.style.display = 'none';
             } else {
                 imageList.style.display = 'flex';
-                setTimeout(() => {
-                    imageList.classList.add('show');
-                    const items = imageList.querySelectorAll('img, a');
-                    items.forEach((item, index) => {
-                        setTimeout(() => item.classList.add('visible'), (items.length - index - 1) * 200);
-                    });
-                }, 10);
-
-                clickableTexts.forEach((text, index) => {
-                    setTimeout(() => text.classList.add('visible'), index * 200);
-                });
+                imageList.classList.add('show');
             }
+
+            clickableTexts.forEach(text => {
+                text.classList.add('visible');
+            });
         });
+
         enterButton.addEventListener('click', () => {
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                initialContent.style.display = 'none';
-                mainContent.style.display = 'block';
-                document.body.style.opacity = '1';
-            }, 1000);
+            initialContent.style.display = 'none';
+            mainContent.style.display = 'block';
         });
     </script>
 </body>
 </html>
-        
