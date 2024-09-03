@@ -93,18 +93,29 @@
             position: fixed; /* Posiciona a imagem fixamente na tela */
             bottom: 25px; /* Move a imagem 25 pixels para cima */
             left: 25px; /* Move a imagem 25 pixels para a direita */
-            width: 75px; /* Define a largura da imagem como 75px */
-            height: 75px; /* Define a altura da imagem como 75px */
+            width: 100px; /* Ajusta o tamanho da imagem para 100px */
+            height: 100px; /* Ajusta o tamanho da imagem para 100px */
             cursor: pointer;
             z-index: 1000; /* Garante que a imagem esteja acima de outros elementos */
         }
 
         .image-list {
             position: fixed;
-            bottom: 100px; /* Ajusta o espaçamento abaixo da imagem "Sobre-mim.png" */
-            left: 25px;
+            bottom: 25px; /* Alinha a lista com a base da imagem "Sobre-mim.png" */
+            left: 50%; /* Centraliza a lista horizontalmente */
+            transform: translateX(-50%); /* Ajusta a centralização horizontal */
             display: none; /* Oculta a lista de imagens inicialmente */
             flex-direction: column;
+            transition: opacity 0.5s ease-out; /* Animação de fade in e fade out */
+        }
+
+        .image-list.show {
+            display: flex; /* Mostra a lista quando a classe 'show' está presente */
+            opacity: 1; /* Define a opacidade para visível */
+        }
+
+        .image-list.hide {
+            opacity: 0; /* Define a opacidade para invisível */
         }
 
         .image-list img {
@@ -122,8 +133,7 @@
 <body>
     <div id="initial-content">
         <img src="imagens/BxssDxrk.png" alt="BxssDxrk" class="header-image">
-        <h1>Você não deveria estar aqui...
-            Vá embora!</h1>
+        <h1>Você não deveria estar aqui... Vá embora!</h1>
         <button id="enter-button">fds n te perguntei nd (Entrar mesmo assim)</button>
     </div>
 
@@ -198,7 +208,15 @@
         const imageList = document.getElementById('image-list');
 
         aboutImage.addEventListener('click', () => {
-            imageList.style.display = imageList.style.display === 'flex' ? 'none' : 'flex';
+            if (imageList.classList.contains('show')) {
+                imageList.classList.remove('show');
+                imageList.classList.add('hide');
+                setTimeout(() => imageList.style.display = 'none', 500); // Após o tempo da animação, oculta o elemento
+            } else {
+                imageList.style.display = 'flex'; // Mostra o elemento
+                imageList.classList.remove('hide');
+                imageList.classList.add('show');
+            }
         });
 
         enterButton.addEventListener('click', () => {
