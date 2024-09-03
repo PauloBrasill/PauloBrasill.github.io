@@ -10,8 +10,8 @@ function fadeTransition() {
         // Trigger fade in for content
         setTimeout(() => {
             content.classList.add('fade-in');
-        }, 100); // Pequeno atraso para garantir que a transição seja visível
-    }, 500); // Duração do fade-out
+        }, 10); // Pequeno atraso para garantir que a transição seja visível
+    }, 1000); // Duração do fade-out
 }
 
 // Fade in effect for initial screen
