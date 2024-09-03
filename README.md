@@ -1,3 +1,3 @@
 Hello, there! :D
 
-Just testing... &rt;
+Just testing... &lt;
