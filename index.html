@@ -27,12 +27,16 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            position: relative; /* Adiciona posicionamento relativo para o #initial-content */
         }
 
         .header-image {
-            width: 100%;
-            max-width: 1200px; /* Ajuste o valor conforme necessário */
-            margin-bottom: 20px;
+            position: absolute; /* Posiciona a imagem de forma absoluta */
+            top: 0; /* Alinha a imagem ao topo */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translateX(-50%); /* Ajusta a centralização horizontal */
+            width: 50%; /* Reduz o tamanho da imagem para metade */
+            max-width: none; /* Remove a restrição de largura máxima */
         }
 
         button {
