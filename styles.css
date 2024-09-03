@@ -56,6 +56,7 @@ body {
 
 .content.fade-in {
     opacity: 1;
+    display: flex; /* Certifique-se de que este estilo existe */
 }
 
 .topic {
