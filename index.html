@@ -122,24 +122,24 @@
             display: flex;
             align-items: center;
             margin-bottom: 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .image-list-item.visible {
+            opacity: 1;
         }
 
         .image-list img {
             width: 50px;
             height: 50px;
-            margin-right: 10px;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.5s ease-out;
-        }
-
-        .image-list img.visible {
-            opacity: 1;
+            margin-right: 10px; /* Espaço entre a imagem e o texto */
         }
 
         .image-list span {
-            color: white;
             font-size: 14px;
+            color: white;
+            margin-left: 10px; /* Espaço entre o texto e a imagem */
         }
     </style>
 </head>
@@ -208,26 +208,26 @@
         <div class="image-list-item">
             <a href="https://pt.namemc.com/profile/BxssDxrk.2" target="_blank">
                 <img src="imagens/NameMC.png" alt="NameMC">
+                <span>NameMC</span>
             </a>
-            <span>NameMC</span>
         </div>
         <div class="image-list-item">
             <a href="https://youtube.com/@bassdark" target="_blank">
                 <img src="imagens/YouTube.png" alt="YouTube">
+                <span>YouTube</span>
             </a>
-            <span>YouTube</span>
         </div>
         <div class="image-list-item">
             <a href="https://on.soundcloud.com/ZPo2w" target="_blank">
                 <img src="imagens/SoundCloud.png" alt="SoundCloud">
+                <span>SoundCloud</span>
             </a>
-            <span>SoundCloud</span>
         </div>
         <div class="image-list-item">
             <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">
                 <img src="imagens/Discord.png" alt="Discord">
+                <span>Discord</span>
             </a>
-            <span>Discord</span>
         </div>
     </div>
 
@@ -241,21 +241,20 @@
         aboutImage.addEventListener('click', () => {
             if (imageList.classList.contains('show')) {
                 imageList.classList.remove('show');
-                const images = imageList.querySelectorAll('img');
-                images.forEach((img, index) => {
-                    img.classList.remove('visible');
+                const items = imageList.querySelectorAll('.image-list-item');
+                items.forEach((item, index) => {
+                    item.classList.remove('visible');
                 });
                 setTimeout(() => imageList.style.display = 'none', 500); // Tempo de animação
             } else {
                 imageList.style.display = 'flex';
                 setTimeout(() => {
                     imageList.classList.add('show');
-                    const images = imageList.querySelectorAll('img');
-                    // Inverte a ordem para que "NameMC.png" apareça primeiro
-                    images.forEach((img, index) => {
-                        setTimeout(() => {
-                            img.classList.add('visible');
-                        }, (images.length - index - 1) * 200); // Intervalo de 200ms entre cada imagem
+                    const items = imageList.querySelectorAll('.image-list-item');
+                    // Inverte a ordem para que o primeiro item apareça primeiro
+                    items.forEach((item, index) => {
+                        setTimeout(() => {item.classList.add('visible');
+                        }, (items.length - index - 1) * 200); // Intervalo de 200ms entre cada item
                     });
                 }, 10); // Tempo para garantir que a mudança de estilo seja aplicada
             }
