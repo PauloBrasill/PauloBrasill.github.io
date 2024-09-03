@@ -17,6 +17,7 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: opacity 1s ease-in-out;
@@ -49,9 +50,6 @@ body {
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alinha os tópicos à esquerda */
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
