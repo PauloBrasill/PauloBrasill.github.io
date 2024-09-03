@@ -27,16 +27,16 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative; /* Adiciona posicionamento relativo para o #initial-content */
+            position: relative;
         }
 
         .header-image {
-            position: absolute; /* Posiciona a imagem de forma absoluta */
-            top: 50px; /* Move a imagem 50 pixels para baixo do topo */
-            left: 50%; /* Centraliza horizontalmente */
-            transform: translateX(-50%); /* Ajusta a centralização horizontal */
-            width: 50%; /* Reduz o tamanho da imagem para metade */
-            max-width: none; /* Remove a restrição de largura máxima */
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            max-width: none;
         }
 
         button {
@@ -88,34 +88,36 @@
             display: block;
         }
 
-        /* Estilos para a imagem "Sobre-mim.png" e lista de imagens */
         .about-image {
-            position: fixed; /* Posiciona a imagem fixamente na tela */
-            bottom: 25px; /* Move a imagem 25 pixels para cima */
-            left: 25px; /* Move a imagem 25 pixels para a direita */
-            width: 100px; /* Ajusta o tamanho da imagem para 100px */
-            height: 100px; /* Ajusta o tamanho da imagem para 100px */
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
             cursor: pointer;
-            z-index: 1000; /* Garante que a imagem esteja acima de outros elementos */
+            z-index: 1000;
         }
 
         .image-list {
             position: fixed;
-            bottom: 25px; /* Alinha a lista com a base da imagem "Sobre-mim.png" */
-            left: 50%; /* Centraliza a lista horizontalmente */
-            transform: translateX(-50%); /* Ajusta a centralização horizontal */
-            display: none; /* Oculta a lista de imagens inicialmente */
+            bottom: 140px; /* Ajusta o espaçamento abaixo da imagem "Sobre-mim.png" */
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
             flex-direction: column;
-            transition: opacity 0.5s ease-out; /* Animação de fade in e fade out */
+            align-items: center; /* Alinha as imagens no centro horizontalmente */
+            transition: opacity 0.5s ease-out;
         }
 
         .image-list.show {
-            display: flex; /* Mostra a lista quando a classe 'show' está presente */
-            opacity: 1; /* Define a opacidade para visível */
+            display: flex;
+            opacity: 1;
         }
 
         .image-list.hide {
-            opacity: 0; /* Define a opacidade para invisível */
+            opacity: 0;
+            transition: opacity 0.5s ease-in; /* Transição de desaparecer com animação 'ease-in' */
         }
 
         .image-list img {
@@ -123,6 +125,7 @@
             height: 50px;
             margin-bottom: 10px;
             cursor: pointer;
+            transition: opacity 0.3s;
         }
 
         .image-list img:hover {
