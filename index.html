@@ -260,7 +260,7 @@
             } else {
                 imageList.style.display = 'flex';
                 setTimeout(() => {
-                    imageList.classList.add('show');
+imageList.classList.add('show');
                     const items = imageList.querySelectorAll('.image-list-item');
                     items.forEach((item, index) => {
                         setTimeout(() => item.classList.add('visible'), index * 100);
@@ -280,14 +280,6 @@
                 }, 10);
             }, 1000); // Tempo de fade out do conteúdo inicial
         });
-
-        // Reverter a ordem dos itens na lista
-        const reverseItems = () => {
-            const items = Array.from(imageList.querySelectorAll('.image-list-item'));
-            items.reverse().forEach(item => imageList.appendChild(item));
-        };
-
-        reverseItems(); // Inverter a ordem dos itens quando a página carrega
     </script>
 </body>
 </html>
