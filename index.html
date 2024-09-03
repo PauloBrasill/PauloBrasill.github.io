@@ -12,14 +12,12 @@
             background-color: black;
             color: white;
             font-family: Arial, sans-serif;
-            opacity: 0; /* Inicialmente oculto para o efeito fade in */
-            transition: opacity 1s ease-in-out;
-            overflow: hidden; /* Evita rolagem até que a animação termine */
+            opacity: 0; /* Inicia invisível */
+            transition: opacity 1s ease-in-out; /* Transição de fade-in */
         }
 
         body.loaded {
-            opacity: 1; /* Visível após a página carregar */
-            overflow: auto; /* Permite rolar quando a animação terminar */
+            opacity: 1; /* Torna visível quando a página está carregada */
         }
 
         #main-content {
@@ -96,6 +94,7 @@
             display: block;
         }
 
+        /* Estilos para a imagem "Sobre-mim.png" e lista de imagens */
         .about-image {
             position: fixed;
             bottom: 25px;
@@ -104,7 +103,7 @@
             height: 50px;
             cursor: pointer;
             z-index: 1000;
-            outline: none;
+            outline: none; /* Remove o contorno que pode causar o piscar azul */
         }
 
         .image-list {
@@ -114,6 +113,7 @@
             display: flex;
             flex-direction: column;
             opacity: 0;
+            outline: none;
             transform: translateY(20px);
             transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
@@ -206,6 +206,7 @@
     </div>
 
     <script>
+        // Fade-in effect when the page loads
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
         });
