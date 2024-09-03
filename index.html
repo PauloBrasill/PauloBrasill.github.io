@@ -12,12 +12,12 @@
             background-color: black;
             color: white;
             font-family: Arial, sans-serif;
-            opacity: 0; /* Inicia invisível */
-            transition: opacity 1s ease-in-out; /* Transição de fade-in */
+            opacity: 0; /* Inicia com a página invisível */
+            transition: opacity 1s ease-in-out; /* Transição de fade in */
         }
 
         body.loaded {
-            opacity: 1; /* Torna visível quando a página está carregada */
+            opacity: 1; /* Torna a página visível quando carregada */
         }
 
         #main-content {
@@ -206,8 +206,7 @@
     </div>
 
     <script>
-        // Fade-in effect when the page loads
-        window.addEventListener('load', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('loaded');
         });
 
