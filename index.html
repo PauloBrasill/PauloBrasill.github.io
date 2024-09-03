@@ -17,6 +17,8 @@
 
         #main-content {
             display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
             padding: 20px;
         }
 
@@ -250,21 +252,19 @@
             if (imageList.classList.contains('show')) {
                 imageList.classList.remove('show');
                 const items = imageList.querySelectorAll('.image-list-item');
-                items.forEach((item) => {
+                items.forEach((item, index) => {
                     item.classList.remove('visible');
                 });
                 setTimeout(() => imageList.style.display = 'none', 500);
             } else {
                 imageList.style.display = 'flex';
-                const items = Array.from(imageList.querySelectorAll('.image-list-item')).reverse();
                 setTimeout(() => {
                     imageList.classList.add('show');
+                    const items = imageList.querySelectorAll('.image-list-item');
                     items.forEach((item, index) => {
-                setTimeout(() => {
-                            item.classList.add('visible');
-                        }, index * 200); // Atraso para cada item aparecer em sequência
+                        setTimeout(() => item.classList.add('visible'), index * 100);
                     });
-                }, 50);
+                }, 10);
             }
         });
 
@@ -273,8 +273,10 @@
             setTimeout(() => {
                 initialContent.style.display = 'none';
                 mainContent.style.display = 'block';
-                document.body.style.opacity = '1';
-            }, 1000); // Tempo para o fade out da página inicial e fade in do conteúdo principal
+                setTimeout(() => {
+                    mainContent.style.opacity = '1';
+                }, 10);
+            }, 1000);
         });
     </script>
 </body>
