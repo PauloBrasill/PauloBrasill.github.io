@@ -9,26 +9,24 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background-color: black;
             color: white;
             font-family: Arial, sans-serif;
             transition: opacity 1s ease-in-out;
         }
 
-        #main-content, #topics {
+        #main-content {
             display: none;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            padding: 20px;
         }
 
         #initial-content {
+            height: 100%;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
+            text-align: center;
         }
 
         button {
@@ -45,6 +43,12 @@
         button:hover {
             background-color: white;
             color: black;
+        }
+
+        #topics {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .topic {
@@ -86,15 +90,15 @@
             <div class="topic">
                 <h2>Minhas criações no Minecraft Bedrock</h2>
                 <div>
-                    <div class="clickable">Projeto 1</div>
+                    <div class="clickable">vvxlt AMOLED 16x</div>
                     <img src="sua-imagem1.png" alt="Imagem do Projeto 1" class="image-hover">
                 </div>
                 <div>
-                    <div class="clickable">Projeto 2</div>
+                    <div class="clickable">CS Craft</div>
                     <img src="sua-imagem2.png" alt="Imagem do Projeto 2" class="image-hover">
                 </div>
                 <div>
-                    <div class="clickable">Projeto 3</div>
+                    <div class="clickable">...</div>
                     <img src="sua-imagem3.png" alt="Imagem do Projeto 3" class="image-hover">
                 </div>
             </div>
@@ -102,15 +106,15 @@
             <div class="topic">
                 <h2>Minhas criações no Minecraft Java</h2>
                 <div>
-                    <div class="clickable">Projeto 1</div>
+                    <div class="clickable">...</div>
                     <img src="sua-imagem4.png" alt="Imagem do Projeto 1" class="image-hover">
                 </div>
                 <div>
-                    <div class="clickable">Projeto 2</div>
+                    <div class="clickable">...</div>
                     <img src="sua-imagem5.png" alt="Imagem do Projeto 2" class="image-hover">
                 </div>
                 <div>
-                    <div class="clickable">Projeto 3</div>
+                    <div class="clickable">...</div>
                     <img src="sua-imagem6.png" alt="Imagem do Projeto 3" class="image-hover">
                 </div>
             </div>
@@ -118,15 +122,15 @@
             <div class="topic">
                 <h2>Minhas criações no YouTube</h2>
                 <div>
-                    <div class="clickable">Vídeo 1</div>
+                    <div class="clickable">...</div>
                     <img src="sua-imagem7.png" alt="Imagem do Vídeo 1" class="image-hover">
                 </div>
                 <div>
-                    <div class="clickable">Vídeo 2</div>
+                    <div class="clickable">...</div>
                     <img src="sua-imagem8.png" alt="Imagem do Vídeo 2" class="image-hover">
                 </div>
                 <div>
-                    <div class="clickable">Vídeo 3</div>
+                    <div class="clickable">...</div>
                     <img src="sua-imagem9.png" alt="Imagem do Vídeo 3" class="image-hover">
                 </div>
             </div>
@@ -137,14 +141,12 @@
         const enterButton = document.getElementById('enter-button');
         const initialContent = document.getElementById('initial-content');
         const mainContent = document.getElementById('main-content');
-        const topics = document.getElementById('topics');
 
         enterButton.addEventListener('click', () => {
             document.body.style.opacity = '0';
             setTimeout(() => {
                 initialContent.style.display = 'none';
-                mainContent.style.display = 'flex';
-                topics.style.display = 'block';
+                mainContent.style.display = 'block';
                 document.body.style.opacity = '1';
             }, 1000);
         });
