@@ -10,6 +10,12 @@ function fadeTransition() {
         // Trigger fade in for content
         setTimeout(() => {
             content.classList.add('fade-in');
-        }, 10);
-    }, 1000); // Matches the fade-out duration
+        }, 10); // Pequeno atraso para garantir que a transição seja visível
+    }, 500); // Duração do fade-out
 }
+
+// Fade in effect for initial screen
+window.onload = () => {
+    const initialScreen = document.getElementById('initial-screen');
+    initialScreen.style.opacity = 1;
+};
