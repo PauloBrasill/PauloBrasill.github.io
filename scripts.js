@@ -6,7 +6,7 @@ function fadeTransition() {
     initialScreen.style.opacity = 0;
     setTimeout(() => {
         initialScreen.style.display = 'none'; // Esconde a tela inicial
-        content.classList.remove('hidden');   // Mostra o conteúdo principal
+        content.style.display = 'flex';       // Mostra o conteúdo principal
         // Fade in the content section
         setTimeout(() => {
             content.classList.add('fade-in');
