@@ -4,98 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-        .button {
-            background-color: black;
-            color: white;
-            border: 2px solid white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin-top: 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background-color: #333;
-        }
-        .hidden {
-            display: none;
-        }
-        .content {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            background-color: black;
-            color: white;
-        }
-        .topic {
-            margin-top: 20px;
-            text-align: left;
-            width: 80%;
-        }
-        .topic h2 {
-            font-size: 1.5rem;
-        }
-        .links {
-            margin-top: 10px;
-        }
-        .links a {
-            display: block;
-            margin: 5px 0;
-            color: white;
-            text-decoration: none;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-        .image-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-        }
-        .image-container img {
-            width: 200px;
-            height: 150px;
-            object-fit: cover;
-            border: 2px solid white;
-            border-radius: 5px;
-            transition: opacity 0.3s;
-        }
-        .image-container img:hover {
-            opacity: 0.7;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div id="initial-screen">
             <h1>Sei lá porra</h1>
-            <button class="button" onclick="showContent()">fodase, vou entrar</button>
+            <button class="button" onclick="fadeTransition()">fodase, vou entrar</button>
         </div>
         <div id="content" class="hidden content">
             <div class="topic">
@@ -133,11 +48,6 @@
             </div>
         </div>
     </div>
-    <script>
-        function showContent() {
-            document.getElementById('initial-screen').style.display = 'none';
-            document.getElementById('content').style.display = 'flex';
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
