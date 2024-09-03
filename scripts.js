@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const btn1 = document.getElementById('btn1');
-    const btn2 = document.getElementById('btn2');
+    const enterButton = document.getElementById('enter-button');
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const mainContent = document.getElementById('main-content');
 
-    btn1.addEventListener('click', () => {
-        alert('Botão 1 clicado!');
-    });
-
-    btn2.addEventListener('click', () => {
-        alert('Botão 2 clicado!');
+    enterButton.addEventListener('click', () => {
+        welcomeScreen.classList.add('hidden');
+        mainContent.classList.remove('hidden');
     });
 });
