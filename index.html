@@ -14,10 +14,12 @@
             font-family: Arial, sans-serif;
             opacity: 0; /* Inicialmente oculto para o efeito fade in */
             transition: opacity 1s ease-in-out;
+            overflow: hidden; /* Evita rolagem até que a animação termine */
         }
 
         body.loaded {
             opacity: 1; /* Visível após a página carregar */
+            overflow: auto; /* Permite rolar quando a animação terminar */
         }
 
         #main-content {
