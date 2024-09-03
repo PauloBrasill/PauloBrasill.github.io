@@ -6,11 +6,64 @@ body {
     color: #fff; /* Texto branco para contraste */
 }
 
+#welcome-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000; /* Fundo preto */
+}
+
+#welcome-screen h1 {
+    color: #fff; /* Texto branco */
+    font-size: 2rem;
+}
+
+#welcome-screen button {
+    background-color: #000; /* Botão preto */
+    color: #fff; /* Texto do botão branco */
+    border: 2px solid #fff; /* Borda branca fina */
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#welcome-screen button:hover {
+    background-color: #333; /* Escurece o botão ao passar o mouse */
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #000; /* Fundo preto */
+}
+
+.hidden {
+    display: none;
+}
+
 header {
     background-color: #333; /* Cabeçalho cinza escuro */
     color: white;
     padding: 1rem;
     text-align: center;
+    position: relative;
+}
+
+#menu-button {
+    background-color: #000; /* Botão preto */
+    color: #fff; /* Texto branco */
+    border: none;
+    padding: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 main {
