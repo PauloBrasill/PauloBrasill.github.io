@@ -14,7 +14,7 @@ function fadeTransition() {
     }, 1000); // Duração do fade-out
 }
 
-// Fade in effect for initial screen
+// Fade in effect for initial screen on page load
 window.onload = () => {
     const initialScreen = document.getElementById('initial-screen');
     initialScreen.style.opacity = 1;
