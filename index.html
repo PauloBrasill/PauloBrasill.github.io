@@ -125,11 +125,13 @@
             align-items: center;
             margin-bottom: 10px;
             opacity: 0;
-            transition: opacity 0.5s ease-out;
+            transform: translateY(20px); /* Inicialmente desloca para baixo */
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
 
         .image-list-item.visible {
             opacity: 1;
+            transform: translateY(0); /* Transição para a posição original */
         }
 
         .image-list img {
