@@ -12,12 +12,11 @@
             background-color: black;
             color: white;
             font-family: Arial, sans-serif;
+            transition: opacity 1s ease-in-out;
         }
 
         #main-content {
             display: none;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
             padding: 20px;
         }
 
@@ -29,7 +28,6 @@
             align-items: center;
             text-align: center;
             position: relative;
-            transition: opacity 1s ease-in-out;
         }
 
         .header-image {
@@ -78,7 +76,6 @@
             color: lightblue;
             cursor: pointer;
             margin: 5px 0;
-            text-decoration: none; /* Remover sublinhado azul */
         }
 
         .image-hover {
@@ -111,6 +108,7 @@
             display: flex;
             flex-direction: column;
             opacity: 0;
+            outline: none;
             transform: translateY(20px);
             transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
@@ -120,37 +118,17 @@
             transform: translateY(0);
         }
 
-        .image-list-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(20px); /* Inicialmente desloca para baixo */
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        .image-list-item.visible {
-            opacity: 1;
-            transform: translateY(0); /* Transição para a posição original */
-        }
-
         .image-list img {
             width: 50px;
             height: 50px;
-            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
         }
 
-        .image-list span {
-            font-size: 14px;
-            color: white;
-            margin-left: 10px;
-        }
-
-        .image-list-item a {
-            display: flex;
-            align-items: center;
-            text-decoration: none; /* Remover sublinhado dos links */
-            outline: none; /* Remover borda azul ao redor dos links */
+        .image-list img.visible {
+            opacity: 1;
         }
     </style>
 </head>
@@ -216,30 +194,10 @@
     <!-- Imagem "Sobre-mim.png" e lista de imagens -->
     <img src="imagens/Sobre-mim.png" alt="Sobre mim" class="about-image" id="about-image">
     <div class="image-list" id="image-list">
-        <div class="image-list-item">
-            <a href="https://pt.namemc.com/profile/BxssDxrk.2" target="_blank">
-                <img src="imagens/NameMC.png" alt="NameMC">
-                <span>NameMC</span>
-            </a>
-        </div>
-        <div class="image-list-item">
-            <a href="https://youtube.com/@bassdark" target="_blank">
-                <img src="imagens/YouTube.png" alt="YouTube">
-                <span>YouTube</span>
-            </a>
-        </div>
-        <div class="image-list-item">
-            <a href="https://on.soundcloud.com/ZPo2w" target="_blank">
-                <img src="imagens/SoundCloud.png" alt="SoundCloud">
-                <span>SoundCloud</span>
-            </a>
-        </div>
-        <div class="image-list-item">
-            <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">
-                <img src="imagens/Discord.png" alt="Discord">
-                <span>Discord</span>
-            </a>
-        </div>
+        <a href="https://pt.namemc.com/profile/BxssDxrk.2" target="_blank"><img src="imagens/NameMC.png" alt="NameMC"></a>
+        <a href="https://youtube.com/@bassdark" target="_blank"><img src="imagens/YouTube.png" alt="YouTube"></a>
+        <a href="https://on.soundcloud.com/ZPo2w" target="_blank"><img src="imagens/SoundCloud.png" alt="SoundCloud"></a>
+        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank"><img src="imagens/Discord.png" alt="Discord"></a>
     </div>
 
     <script>
@@ -252,42 +210,34 @@
         aboutImage.addEventListener('click', () => {
             if (imageList.classList.contains('show')) {
                 imageList.classList.remove('show');
-                const items = imageList.querySelectorAll('.image-list-item');
-                items.forEach((item, index) => {
-                    item.classList.remove('visible');
+                const images = imageList.querySelectorAll('img');
+                images.forEach((img, index) => {
+                    img.classList.remove('visible');
                 });
-                setTimeout(() => imageList.style.display = 'none', 500);
+                setTimeout(() => imageList.style.display = 'none', 500); // Tempo de animação
             } else {
                 imageList.style.display = 'flex';
                 setTimeout(() => {
                     imageList.classList.add('show');
-                    const items = imageList.querySelectorAll('.image-list-item');
-                    items.forEach((item, index) => {
-                        setTimeout(() => item.classList.add('visible'), index * 100);
+                    const images = imageList.querySelectorAll('img');
+                    // Inverte a ordem para que "NameMC.png" apareça primeiro
+                    images.forEach((img, index) => {
+                        setTimeout(() => {
+                            img.classList.add('visible');
+                        }, (images.length - index - 1) * 200); // Intervalo de 200ms entre cada imagem
                     });
-                }, 10);
+                }, 10); // Tempo para garantir que a mudança de estilo seja aplicada
             }
         });
 
         enterButton.addEventListener('click', () => {
-            initialContent.style.opacity = '0';
+            document.body.style.opacity = '0';
             setTimeout(() => {
                 initialContent.style.display = 'none';
                 mainContent.style.display = 'block';
-                mainContent.style.opacity = '0'; // Inicialmente ocultar o conteúdo principal
-                setTimeout(() => {
-                    mainContent.style.opacity = '1'; // Aplicar fade in
-                }, 10);
-            }, 1000); // Tempo de fade out do conteúdo inicial
+                document.body.style.opacity = '1';
+            }, 1000); // Tempo de transição
         });
-
-        // Reverter a ordem dos itens na lista
-        const reverseItems = () => {
-            const items = Array.from(imageList.querySelectorAll('.image-list-item'));
-            items.reverse().forEach(item => imageList.appendChild(item));
-        };
-
-        reverseItems(); // Inverter a ordem dos itens quando a página carrega
     </script>
 </body>
 </html>
