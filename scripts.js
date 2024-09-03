@@ -10,7 +10,7 @@ function fadeTransition() {
         // Trigger fade in for content
         setTimeout(() => {
             content.classList.add('fade-in');
-        }, 10); // Pequeno atraso para garantir que a transição seja visível
+        }, 100); // Pequeno atraso para garantir que a transição seja visível
     }, 500); // Duração do fade-out
 }
 
