@@ -234,7 +234,7 @@
                 setTimeout(() => imageList.style.display = 'none', 300); // Tempo de animação
             } else {
                 imageList.style.display = 'flex';
-                setTimeout(() =>setTimeout(() => imageList.classList.add('show'), 10); // Tempo para garantir que a mudança de estilo seja aplicada
+                setTimeout(() => imageList.classList.add('show'), 10); // Tempo para garantir que a mudança de estilo seja aplicada
             }
         });
 
@@ -243,7 +243,8 @@
             setTimeout(() => {
                 initialContent.style.display = 'none';
                 mainContent.style.display = 'block';
-                document.body.style.opacity = '1';}, 1000);
+                document.body.style.opacity = '1';
+            }, 1000);
         });
     </script>
 </body>
