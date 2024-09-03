@@ -27,16 +27,16 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative; /* Adiciona posicionamento relativo para o #initial-content */
+            position: relative;
         }
 
         .header-image {
-            position: absolute; /* Posiciona a imagem de forma absoluta */
-            top: 50px; /* Move a imagem 50 pixels para baixo do topo */
-            left: 50%; /* Centraliza horizontalmente */
-            transform: translateX(-50%); /* Ajusta a centralização horizontal */
-            width: 50%; /* Reduz o tamanho da imagem para metade */
-            max-width: none; /* Remove a restrição de largura máxima */
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            max-width: none;
         }
 
         button {
@@ -90,47 +90,49 @@
 
         /* Estilos para a imagem "Sobre-mim.png" e lista de imagens */
         .about-image {
-            position: fixed; /* Posiciona a imagem fixamente na tela */
-            bottom: 25px; /* Move a imagem 25 pixels para cima */
-            left: 25px; /* Move a imagem 25 pixels para a direita */
-            width: 100px; /* Define a largura da imagem como 100px */
-            height: 100px; /* Define a altura da imagem como 100px */
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 100px;
+            height: 100px;
             cursor: pointer;
-            z-index: 1000; /* Garante que a imagem esteja acima de outros elementos */
+            z-index: 1000;
         }
 
         .image-list {
             position: fixed;
-            bottom: 125px; /* Ajusta o espaçamento abaixo da imagem "Sobre-mim.png" */
+            bottom: 125px;
             left: 25px;
-            display: flex; /* Muda para flex */
-            flex-direction: column; /* Alinha verticalmente */
-            transition: opacity 0.5s ease-out;
-            opacity: 0; /* Começa invisível */
+            display: flex;
+            flex-direction: column;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
         }
 
         .image-list.show {
-            opacity: 1; /* Torna a lista visível */
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .image-list img {
             width: 50px;
             height: 50px;
-            margin-bottom: 10px; /* Espaçamento vertical entre as imagens */
+            margin-bottom: 10px;
             cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.5s ease-out;
+            transition: opacity 0.3s;
         }
 
-        .image-list img.show {
-            opacity: 1; /* Torna a imagem visível */
+        .image-list img:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div id="initial-content">
         <img src="imagens/BxssDxrk.png" alt="BxssDxrk" class="header-image">
-        <h1>Você não deveria estar aqui... Vá embora!</h1>
+        <h1>Você não deveria estar aqui...
+            Vá embora!</h1>
         <button id="enter-button">fds n te perguntei nd (Entrar mesmo assim)</button>
     </div>
 
@@ -205,18 +207,12 @@
         const imageList = document.getElementById('image-list');
 
         aboutImage.addEventListener('click', () => {
-            if (imageList.style.display === 'flex') {
+            if (imageList.classList.contains('show')) {
                 imageList.classList.remove('show');
                 setTimeout(() => imageList.style.display = 'none', 500); // Tempo de animação
             } else {
                 imageList.style.display = 'flex';
                 setTimeout(() => imageList.classList.add('show'), 10); // Tempo para garantir que a mudança de estilo seja aplicada
-                
-                // Animação das imagens da lista
-                const images = imageList.querySelectorAll('img');
-                images.forEach((img, index) => {
-                    setTimeout(() => img.classList.add('show'), index * 500); // Exibe uma imagem a cada 500ms
-                });
             }
         });
 
