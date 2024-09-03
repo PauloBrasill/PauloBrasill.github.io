@@ -101,29 +101,52 @@
 
         .image-list {
             position: fixed;
-            bottom: 150px; /* Ajusta o espaçamento abaixo da imagem "Sobre-mim.png" */
+            bottom: 125px; /* Ajusta o espaçamento abaixo da imagem "Sobre-mim.png" */
             left: 25px;
             display: none; /* Oculta a lista de imagens inicialmente */
             flex-direction: column; /* Alinha verticalmente */
-            transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Aumenta a velocidade da animação */
-            transform: translateY(20px); /* Começa com a lista um pouco abaixo */
+            align-items: center; /* Alinha imagens ao centro */
+            transition: opacity 0.3s ease-out;
             opacity: 0; /* Começa invisível */
         }
 
         .image-list.show {
-            transform: translateY(0); /* Move a lista para cima */
             opacity: 1; /* Torna a lista visível */
         }
 
         .image-list img {
-            width: 60px; /* Aumenta o tamanho das imagens */
-            height: 60px; /* Aumenta o tamanho das imagens */
+            width: 60px;
+            height: 60px;
             margin-bottom: 10px; /* Espaçamento vertical entre as imagens */
-            cursor: pointer;
+            opacity: 0; /* Começa invisível */
+            animation: fadeIn 0.5s forwards;
         }
 
-        .image-list img:hover {
-            opacity: 0.8;
+        .image-list img:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .image-list img:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .image-list img:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .image-list img:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -208,10 +231,10 @@
         aboutImage.addEventListener('click', () => {
             if (imageList.style.display === 'flex') {
                 imageList.classList.remove('show');
-                setTimeout(() => imageList.style.display = 'none', 300); // Tempo de animação ajustado
+                setTimeout(() => imageList.style.display = 'none', 300); // Tempo de animação
             } else {
                 imageList.style.display = 'flex';
-                setTimeout(() => imageList.classList.add('show'), 10); // Tempo para garantir que a mudança de estilo seja aplicada
+                setTimeout(() =>setTimeout(() => imageList.classList.add('show'), 10); // Tempo para garantir que a mudança de estilo seja aplicada
             }
         });
 
