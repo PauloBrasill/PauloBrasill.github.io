@@ -41,17 +41,102 @@
         .button:hover {
             background-color: #333;
         }
+        .hidden {
+            display: none;
+        }
+        .content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: black;
+            color: white;
+        }
+        .topic {
+            margin-top: 20px;
+            text-align: left;
+            width: 80%;
+        }
+        .topic h2 {
+            font-size: 1.5rem;
+        }
+        .links {
+            margin-top: 10px;
+        }
+        .links a {
+            display: block;
+            margin: 5px 0;
+            color: white;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .image-container img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: opacity 0.3s;
+        }
+        .image-container img:hover {
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Sei lá porra</h1>
-        <button class="button" onclick="handleClick()">fodase, vou entrar</button>
+        <div id="initial-screen">
+            <h1>Sei lá porra</h1>
+            <button class="button" onclick="showContent()">fodase, vou entrar</button>
+        </div>
+        <div id="content" class="hidden content">
+            <div class="topic">
+                <h2>Minhas criações no MC Bedrock</h2>
+                <div class="links">
+                    <a href="#">Texto 1</a>
+                    <a href="#">Texto 2</a>
+                    <a href="#">Texto 3</a>
+                </div>
+                <div class="image-container">
+                    <img src="caminho-para-imagem-bedrock.png" alt="MC Bedrock">
+                </div>
+            </div>
+            <div class="topic">
+                <h2>Minhas Criações no MC Java</h2>
+                <div class="links">
+                    <a href="#">Texto 1</a>
+                    <a href="#">Texto 2</a>
+                    <a href="#">Texto 3</a>
+                </div>
+                <div class="image-container">
+                    <img src="caminho-para-imagem-java.png" alt="MC Java">
+                </div>
+            </div>
+            <div class="topic">
+                <h2>Minhas Criações no YouTube</h2>
+                <div class="links">
+                    <a href="#">Texto 1</a>
+                    <a href="#">Texto 2</a>
+                    <a href="#">Texto 3</a>
+                </div>
+                <div class="image-container">
+                    <img src="caminho-para-imagem-youtube.png" alt="YouTube">
+                </div>
+            </div>
+        </div>
     </div>
     <script>
-        function handleClick() {
-            // Coloque aqui a ação desejada ao clicar no botão
-            alert('Você clicou no botão!');
+        function showContent() {
+            document.getElementById('initial-screen').style.display = 'none';
+            document.getElementById('content').style.display = 'flex';
         }
     </script>
 </body>
