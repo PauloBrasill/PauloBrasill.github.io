@@ -27,16 +27,16 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
+            position: relative; /* Adiciona posicionamento relativo para o #initial-content */
         }
 
         .header-image {
-            position: absolute;
-            top: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50%;
-            max-width: none;
+            position: absolute; /* Posiciona a imagem de forma absoluta */
+            top: 50px; /* Move a imagem 50 pixels para baixo do topo */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translateX(-50%); /* Ajusta a centralização horizontal */
+            width: 50%; /* Reduz o tamanho da imagem para metade */
+            max-width: none; /* Remove a restrição de largura máxima */
         }
 
         button {
@@ -88,44 +88,38 @@
             display: block;
         }
 
+        /* Estilos para a imagem "Sobre-mim.png" e lista de imagens */
         .about-image {
-            position: fixed;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 100px;
+            position: fixed; /* Posiciona a imagem fixamente na tela */
+            bottom: 25px; /* Move a imagem 25 pixels para cima */
+            left: 25px; /* Move a imagem 25 pixels para a direita */
+            width: 100px; /* Define a largura da imagem como 100px */
+            height: 100px; /* Define a altura da imagem como 100px */
             cursor: pointer;
-            z-index: 1000;
+            z-index: 1000; /* Garante que a imagem esteja acima de outros elementos */
         }
 
         .image-list {
             position: fixed;
-            bottom: 140px; /* Ajusta o espaçamento abaixo da imagem "Sobre-mim.png" */
-            left: 50%;
-            transform: translateX(-50%);
-            display: none;
-            flex-direction: column;
-            align-items: center; /* Alinha as imagens no centro horizontalmente */
-            transition: opacity 0.5s ease-out;
+            bottom: 125px; /* Ajusta o espaçamento abaixo da imagem "Sobre-mim.png" */
+            left: 25px;
+            display: none; /* Oculta a lista de imagens inicialmente */
+            flex-direction: row; /* Alinha horizontalmente */
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+            transform: translateY(20px); /* Começa com a lista um pouco abaixo */
+            opacity: 0; /* Começa invisível */
         }
 
         .image-list.show {
-            display: flex;
-            opacity: 1;
-        }
-
-        .image-list.hide {
-            opacity: 0;
-            transition: opacity 0.5s ease-in; /* Transição de desaparecer com animação 'ease-in' */
+            transform: translateY(0); /* Move a lista para cima */
+            opacity: 1; /* Torna a lista visível */
         }
 
         .image-list img {
             width: 50px;
             height: 50px;
-            margin-bottom: 10px;
+            margin-right: 10px; /* Espaçamento horizontal entre as imagens */
             cursor: pointer;
-            transition: opacity 0.3s;
         }
 
         .image-list img:hover {
@@ -136,7 +130,8 @@
 <body>
     <div id="initial-content">
         <img src="imagens/BxssDxrk.png" alt="BxssDxrk" class="header-image">
-        <h1>Você não deveria estar aqui... Vá embora!</h1>
+        <h1>Você não deveria estar aqui...
+            Vá embora!</h1>
         <button id="enter-button">fds n te perguntei nd (Entrar mesmo assim)</button>
     </div>
 
@@ -211,14 +206,12 @@
         const imageList = document.getElementById('image-list');
 
         aboutImage.addEventListener('click', () => {
-            if (imageList.classList.contains('show')) {
+            if (imageList.style.display === 'flex') {
                 imageList.classList.remove('show');
-                imageList.classList.add('hide');
-                setTimeout(() => imageList.style.display = 'none', 500); // Após o tempo da animação, oculta o elemento
+                setTimeout(() => imageList.style.display = 'none', 500); // Tempo de animação
             } else {
-                imageList.style.display = 'flex'; // Mostra o elemento
-                imageList.classList.remove('hide');
-                imageList.classList.add('show');
+                imageList.style.display = 'flex';
+                setTimeout(() => imageList.classList.add('show'), 10); // Tempo para garantir que a mudança de estilo seja aplicada
             }
         });
 
@@ -227,8 +220,7 @@
             setTimeout(() => {
                 initialContent.style.display = 'none';
                 mainContent.style.display = 'block';
-                document.body.style.opacity = '1';
-            }, 1000);
+                document.body.style.opacity = '1';}, 1000);
         });
     </script>
 </body>
