@@ -27,7 +27,7 @@ body {
 }
 
 .hidden {
-    opacity: 0;
+    display: none;
 }
 
 .button {
@@ -49,12 +49,12 @@ body {
 }
 
 .content {
-    display: none;
+    display: flex;
     opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 .content.fade-in {
-    display: flex;
     opacity: 1;
 }
 
