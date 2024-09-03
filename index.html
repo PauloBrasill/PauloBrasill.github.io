@@ -103,10 +103,9 @@
             position: fixed;
             bottom: 125px; /* Ajusta o espaçamento abaixo da imagem "Sobre-mim.png" */
             left: 25px;
-            display: none; /* Oculta a lista de imagens inicialmente */
+            display: flex; /* Muda para flex */
             flex-direction: column; /* Alinha verticalmente */
-            align-items: center; /* Alinha imagens ao centro */
-            transition: opacity 0.3s ease-out;
+            transition: opacity 0.5s ease-out;
             opacity: 0; /* Começa invisível */
         }
 
@@ -115,46 +114,23 @@
         }
 
         .image-list img {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             margin-bottom: 10px; /* Espaçamento vertical entre as imagens */
-            opacity: 0; /* Começa invisível */
-            animation: fadeIn 0.5s forwards;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
         }
 
-        .image-list img:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .image-list img:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .image-list img:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .image-list img:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .image-list img.show {
+            opacity: 1; /* Torna a imagem visível */
         }
     </style>
 </head>
 <body>
     <div id="initial-content">
         <img src="imagens/BxssDxrk.png" alt="BxssDxrk" class="header-image">
-        <h1>Você não deveria estar aqui...
-            Vá embora!</h1>
+        <h1>Você não deveria estar aqui... Vá embora!</h1>
         <button id="enter-button">fds n te perguntei nd (Entrar mesmo assim)</button>
     </div>
 
@@ -231,10 +207,16 @@
         aboutImage.addEventListener('click', () => {
             if (imageList.style.display === 'flex') {
                 imageList.classList.remove('show');
-                setTimeout(() => imageList.style.display = 'none', 300); // Tempo de animação
+                setTimeout(() => imageList.style.display = 'none', 500); // Tempo de animação
             } else {
                 imageList.style.display = 'flex';
                 setTimeout(() => imageList.classList.add('show'), 10); // Tempo para garantir que a mudança de estilo seja aplicada
+                
+                // Animação das imagens da lista
+                const images = imageList.querySelectorAll('img');
+                images.forEach((img, index) => {
+                    setTimeout(() => img.classList.add('show'), index * 500); // Exibe uma imagem a cada 500ms
+                });
             }
         });
 
@@ -244,7 +226,7 @@
                 initialContent.style.display = 'none';
                 mainContent.style.display = 'block';
                 document.body.style.opacity = '1';
-            }, 1000);
+            }, 1000); // Tempo de transição
         });
     </script>
 </body>
