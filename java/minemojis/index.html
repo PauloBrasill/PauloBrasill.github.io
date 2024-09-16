@@ -31,6 +31,8 @@
             cursor: pointer;
             outline: none;
             transition: background-color 0.3s, color 0.3s;
+            width: 200px; /* Define a largura dos botões */
+            text-align: center; /* Centraliza o texto */
         }
 
         button:hover {
@@ -41,13 +43,9 @@
 </head>
 <body>
     <div class="button-container">
-        <a href="/java/downloads/minemojis-plugin-1.0.jar" download="minemojis-plugin-1.0.jar">
-            <button>Plugin</button>
-        </a>
-        <a href="/java/downloads/minemojis-textura-1.0.zip" download="minemojis-textura-1.0.zip">
-            <button>Textura</button>
-        </a>
-        <button onclick="window.location.href='/java/minemojis/lista-de-emojis'">Lista de Emojis</button>
+        <button onclick="window.location.href='/java/downloads/minemojis-plugin-1.0.jar';">Plugin</button>
+        <button onclick="window.location.href='/java/downloads/minemojis-textura-1.0.zip';">Textura</button>
+        <button onclick="window.location.href='/java/minemojis/lista-de-emojis';">Lista de Emojis</button>
     </div>
 </body>
 </html>
