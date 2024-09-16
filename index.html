@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uma página inútil! (Igual eu)</title>
+    <title>Uma página inútil! (igual eu)</title>
     <style>
         body, html {
             margin: 0;
@@ -14,13 +14,6 @@
             font-family: Arial, sans-serif;
         }
 
-        #main-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            padding: 20px;
-        }
-
         #initial-content {
             height: 100%;
             display: flex;
@@ -29,16 +22,6 @@
             align-items: center;
             text-align: center;
             position: relative;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .header-image {
-            position: absolute;
-            top: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50%;
-            max-width: none;
         }
 
         button {
@@ -57,229 +40,12 @@
             background-color: white;
             color: black;
         }
-
-        #topics {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .topic {
-            margin: 20px 0;
-            width: 80%;
-            max-width: 600px;
-        }
-
-        .topic h2 {
-            margin-bottom: 10px;
-        }
-
-        .clickable {
-            color: lightblue;
-            cursor: pointer;
-            margin: 5px 0;
-            text-decoration: none; /* Remover sublinhado azul */
-        }
-
-        .image-hover {
-            width: 25%;
-            max-width: 300px;
-            margin-top: 10px;
-            display: none;
-        }
-
-        .clickable:hover + .image-hover {
-            display: block;
-        }
-
-        /* Estilos para a imagem "Sobre-mim.png" e lista de imagens */
-        .about-image {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            z-index: 1000;
-            outline: none; /* Remove o contorno que pode causar o piscar azul */
-        }
-
-        .image-list {
-            position: fixed;
-            bottom: 75px;
-            left: 25px;
-            display: flex;
-            flex-direction: column;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        .image-list.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .image-list-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(20px); /* Inicialmente desloca para baixo */
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        .image-list-item.visible {
-            opacity: 1;
-            transform: translateY(0); /* Transição para a posição original */
-        }
-
-        .image-list img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        .image-list span {
-            font-size: 14px;
-            color: white;
-            margin-left: 10px;
-        }
-
-        .image-list-item a {
-            display: flex;
-            align-items: center;
-            text-decoration: none; /* Remover sublinhado dos links */
-            outline: none; /* Remover borda azul ao redor dos links */
-        }
     </style>
 </head>
 <body>
     <div id="initial-content">
-        <img src="imagens/BxssDxrk.png" alt="BxssDxrk" class="header-image">
-        <h1>Você não deveria estar aqui...<br>Vá embora!</h1>
-        <button id="enter-button">fds n te perguntei nd (Entrar mesmo assim)</button>
+        <h1>Você não deveria estar aqui...</h1>
+        <button id="enter-button">fds n te perguntei nd (Entrar)</button>
     </div>
-
-    <div id="main-content">
-        <div id="topics">
-            <div class="topic">
-                <h2>Minhas criações no Minecraft Bedrock</h2>
-                <div>
-                    <div class="clickable">vvxlt AMOLED 16x</div>
-                    <img src="imagens/vvxlt-AMOLED-16x.png" alt="vvxlt AMOLED 16x" class="image-hover">
-                </div>
-                <div>
-                    <div class="clickable">CS Craft</div>
-                    <img src="imagens/CS-Craft.png" alt="CS Craft" class="image-hover">
-                </div>
-                <div>
-                    <div class="clickable">ActionBoard</div>
-                    <img src="imagens/ActionBoard.png" alt="ActionBoard" class="image-hover">
-                </div>
-            </div>
-
-            <div class="topic">
-                <h2>Minhas criações no Minecraft Java</h2>
-                <div>
-                    <div class="clickable">...</div>
-                    <img src="sua-imagem4.png" alt="Imagem do Projeto 1" class="image-hover">
-                </div>
-                <div>
-                    <div class="clickable">...</div>
-                    <img src="sua-imagem5.png" alt="Imagem do Projeto 2" class="image-hover">
-                </div>
-                <div>
-                    <div class="clickable">...</div>
-                    <img src="sua-imagem6.png" alt="Imagem do Projeto 3" class="image-hover">
-                </div>
-            </div>
-
-            <div class="topic">
-                <h2>Minhas criações no YouTube</h2>
-                <div>
-                    <div class="clickable">...</div>
-                    <img src="sua-imagem7.png" alt="Imagem do Vídeo 1" class="image-hover">
-                </div>
-                <div>
-                    <div class="clickable">...</div>
-                    <img src="sua-imagem8.png" alt="Imagem do Vídeo 2" class="image-hover">
-                </div>
-                <div>
-                    <div class="clickable">...</div>
-                    <img src="sua-imagem9.png" alt="Imagem do Vídeo 3" class="image-hover">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Imagem "Sobre-mim.png" e lista de imagens -->
-    <img src="imagens/Sobre-mim.png" alt="Sobre mim" class="about-image" id="about-image">
-    <div class="image-list" id="image-list">
-        <div class="image-list-item">
-            <a href="https://pt.namemc.com/profile/BxssDxrk.2" target="_blank">
-                <img src="imagens/NameMC.png" alt="NameMC">
-                <span>NameMC</span>
-            </a>
-        </div>
-        <div class="image-list-item">
-            <a href="https://youtube.com/@bassdark" target="_blank">
-                <img src="imagens/YouTube.png" alt="YouTube">
-                <span>YouTube</span>
-            </a>
-        </div>
-        <div class="image-list-item">
-            <a href="https://on.soundcloud.com/ZPo2w" target="_blank">
-                <img src="imagens/SoundCloud.png" alt="SoundCloud">
-                <span>SoundCloud</span>
-            </a>
-        </div>
-        <div class="image-list-item">
-            <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">
-                <img src="imagens/Discord.png" alt="Discord">
-                <span>Discord</span>
-            </a>
-        </div>
-    </div>
-
-    <script>
-        const enterButton = document.getElementById('enter-button');
-        const initialContent = document.getElementById('initial-content');
-        const mainContent = document.getElementById('main-content');
-        const aboutImage = document.getElementById('about-image');
-        const imageList = document.getElementById('image-list');
-
-        aboutImage.addEventListener('click', () => {
-            if (imageList.classList.contains('show')) {
-                imageList.classList.remove('show');
-                const items = imageList.querySelectorAll('.image-list-item');
-                items.forEach((item, index) => {
-                    item.classList.remove('visible');
-                });
-                setTimeout(() => imageList.style.display = 'none', 500);
-            } else {
-                imageList.style.display = 'flex';
-                setTimeout(() => {
-imageList.classList.add('show');
-                    const items = imageList.querySelectorAll('.image-list-item');
-                    items.forEach((item, index) => {
-                        setTimeout(() => item.classList.add('visible'), index * 100);
-                    });
-                }, 10);
-            }
-        });
-
-        enterButton.addEventListener('click', () => {
-            initialContent.style.opacity = '0';
-            setTimeout(() => {
-                initialContent.style.display = 'none';
-                mainContent.style.display = 'block';
-                mainContent.style.opacity = '0'; // Inicialmente ocultar o conteúdo principal
-                setTimeout(() => {
-                    mainContent.style.opacity = '1'; // Aplicar fade in
-                }, 10);
-            }, 1000); // Tempo de fade out do conteúdo inicial
-        });
-    </script>
 </body>
 </html>
