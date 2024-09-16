@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uma página inútil! (igual eu)</title>
+    <title>Página Reduzida</title>
     <style>
         body, html {
             margin: 0;
@@ -41,6 +41,14 @@
             color: black;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const enterButton = document.getElementById('enter-button');
+            enterButton.addEventListener('click', function () {
+                window.location.href = '/home/index.html';
+            });
+        });
+    </script>
 </head>
 <body>
     <div id="initial-content">
