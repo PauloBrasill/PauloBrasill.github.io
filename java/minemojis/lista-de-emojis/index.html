@@ -1,50 +1,201 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Tabela Unicode</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-        }
-
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        button {
+        body {
             background-color: black;
             color: white;
-            border: 2px solid white;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            outline: none;
-            transition: background-color 0.3s, color 0.3s;
+            font-family: Arial, sans-serif;
         }
-
-        button:hover {
-            background-color: white;
-            color: black;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+        }
+        td {
+            cursor: pointer;
+        }
+        td:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
-    <div class="button-container">
-        <button onclick="window.location.href='/bedrock/'">Projetos Bedrock</button>
-        <button onclick="window.location.href='/java/'">Projetos Java</button>
-        <button onclick="window.location.href='/outros/'">Outros</button>
-    </div>
+
+<h2>Tabela de Caracteres Unicode</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>U+</th>
+            <th>0</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>E00x</th>
+            <td onclick="copyToClipboard('\\uE000')"></td>
+            <td onclick="copyToClipboard('\\uE001')"></td>
+            <td onclick="copyToClipboard('\\uE002')"></td>
+            <td onclick="copyToClipboard('\\uE003')"></td>
+            <td onclick="copyToClipboard('\\uE004')"></td>
+            <td onclick="copyToClipboard('\\uE005')"></td>
+            <td onclick="copyToClipboard('\\uE006')"></td>
+            <td onclick="copyToClipboard('\\uE007')"></td>
+            <td onclick="copyToClipboard('\\uE008')"></td>
+            <td onclick="copyToClipboard('\\uE009')"></td>
+            <td onclick="copyToClipboard('\\uE00A')"></td>
+            <td onclick="copyToClipboard('\\uE00B')"></td>
+            <td onclick="copyToClipboard('\\uE00C')"></td>
+            <td onclick="copyToClipboard('\\uE00D')"></td>
+            <td onclick="copyToClipboard('\\uE00E')"></td>
+            <td onclick="copyToClipboard('\\uE00F')"></td>
+        </tr>
+        <tr>
+            <th>E01x</th>
+            <td onclick="copyToClipboard('\\uE010')"></td>
+            <td onclick="copyToClipboard('\\uE011')"></td>
+            <td onclick="copyToClipboard('\\uE012')"></td>
+            <td onclick="copyToClipboard('\\uE013')"></td>
+            <td onclick="copyToClipboard('\\uE014')"></td>
+            <td onclick="copyToClipboard('\\uE015')"></td>
+            <td onclick="copyToClipboard('\\uE016')"></td>
+            <td onclick="copyToClipboard('\\uE017')"></td>
+            <td onclick="copyToClipboard('\\uE018')"></td>
+            <td onclick="copyToClipboard('\\uE019')"></td>
+            <td onclick="copyToClipboard('\\uE01A')"></td>
+            <td onclick="copyToClipboard('\\uE01B')"></td>
+            <td onclick="copyToClipboard('\\uE01C')"></td>
+            <td onclick="copyToClipboard('\\uE01D')"></td>
+            <td onclick="copyToClipboard('\\uE01E')"></td>
+            <td onclick="copyToClipboard('\\uE01F')"></td>
+        </tr>
+        <tr>
+            <th>E02x</th>
+            <td onclick="copyToClipboard('\\uE020')"></td>
+            <td onclick="copyToClipboard('\\uE021')"></td>
+            <td onclick="copyToClipboard('\\uE022')"></td>
+            <td onclick="copyToClipboard('\\uE023')"></td>
+            <td onclick="copyToClipboard('\\uE024')"></td>
+            <td onclick="copyToClipboard('\\uE025')"></td>
+            <td onclick="copyToClipboard('\\uE026')"></td>
+            <td onclick="copyToClipboard('\\uE027')"></td>
+            <td onclick="copyToClipboard('\\uE028')"></td>
+            <td onclick="copyToClipboard('\\uE029')"></td>
+            <td onclick="copyToClipboard('\\uE02A')"></td>
+            <td onclick="copyToClipboard('\\uE02B')"></td>
+            <td onclick="copyToClipboard('\\uE02C')"></td>
+            <td onclick="copyToClipboard('\\uE02D')"></td>
+            <td onclick="copyToClipboard('\\uE02E')"></td>
+            <td onclick="copyToClipboard('\\uE02F')"></td>
+        </tr>
+        <tr>
+            <th>E03x</th>
+            <td onclick="copyToClipboard('\\uE030')"></td>
+            <td onclick="copyToClipboard('\\uE031')"></td>
+            <td onclick="copyToClipboard('\\uE032')"></td>
+            <td onclick="copyToClipboard('\\uE033')"></td>
+            <td onclick="copyToClipboard('\\uE034')"></td>
+            <td onclick="copyToClipboard('\\uE035')"></td>
+            <td onclick="copyToClipboard('\\uE036')"></td>
+            <td onclick="copyToClipboard('\\uE037')"></td>
+            <td onclick="copyToClipboard('\\uE038')"></td>
+            <td onclick="copyToClipboard('\\uE039')"></td>
+            <td onclick="copyToClipboard('\\uE03A')"></td>
+            <td onclick="copyToClipboard('\\uE03B')"></td>
+            <td onclick="copyToClipboard('\\uE03C')"></td>
+            <td onclick="copyToClipboard('\\uE03D')"></td>
+            <td onclick="copyToClipboard('\\uE03E')"></td>
+            <td onclick="copyToClipboard('\\uE03F')"></td>
+        </tr>
+        <tr>
+            <th>E04x</th>
+            <td onclick="copyToClipboard('\\uE040')"></td>
+            <td onclick="copyToClipboard('\\uE041')"></td>
+            <td onclick="copyToClipboard('\\uE042')"></td>
+            <td onclick="copyToClipboard('\\uE043')"></td>
+            <td onclick="copyToClipboard('\\uE044')"></td>
+            <td onclick="copyToClipboard('\\uE045')"></td>
+            <td onclick="copyToClipboard('\\uE046')"></td>
+            <td onclick="copyToClipboard('\\uE047')"></td>
+            <td onclick="copyToClipboard('\\uE048')"></td>
+            <td onclick="copyToClipboard('\\uE049')"></td>
+            <td onclick="copyToClipboard('\\uE04A')"></td>
+            <td onclick="copyToClipboard('\\uE04B')"></td>
+            <td onclick="copyToClipboard('\\uE04C')"></td>
+            <td onclick="copyToClipboard('\\uE04D')"></td>
+            <td onclick="copyToClipboard('\\uE04E')"></td>
+            <td onclick="copyToClipboard('\\uE04F')"></td>
+        </tr>
+        <tr>
+            <th>E05x</th>
+            <td onclick="copyToClipboard('\\uE050')"></td>
+            <td onclick="copyToClipboard('\\uE051')"></td>
+            <td onclick="copyToClipboard('\\uE052')"></td>
+            <td onclick="copyToClipboard('\\uE053')"></td>
+            <td onclick="copyToClipboard('\\uE054')"></td>
+            <td onclick="copyToClipboard('\\uE055')"></td>
+            <td onclick="copyToClipboard('\\uE056')"></td>
+            <td onclick="copyToClipboard('\\uE057')"></td>
+            <td onclick="copyToClipboard('\\uE058')"></td>
+            <td onclick="copyToClipboard('\\uE059')"></td>
+            <td onclick="copyToClipboard('\\uE05A')"></td>
+            <td onclick="copyToClipboard('\\uE05B')"></td>
+            <td onclick="copyToClipboard('\\uE05C')"></td>
+            <td onclick="copyToClipboard('\\uE05D')"></td>
+            <td onclick="copyToClipboard('\\uE05E')"></td>
+            <td onclick="copyToClipboard('\\uE05F')"></td>
+        </tr>
+        <tr>
+            <th>E06x</th>
+            <td onclick="copyToClipboard('\\uE060')"></td>
+            <td onclick="copyToClipboard('\\uE061')"></td>
+            <td onclick="copyToClipboard('\\uE062')"></td>
+            <td onclick="copyToClipboard('\\uE063')"></td>
+            <td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    function copyToClipboard(text) {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        alert("Código " + text + " copiado para a área de transferência!");
+    }
+</script>
+
 </body>
 </html>
